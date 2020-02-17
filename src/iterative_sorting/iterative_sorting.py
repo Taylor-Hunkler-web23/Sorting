@@ -12,6 +12,7 @@
 
 
 def selection_sort( arr ):
+    
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
@@ -38,10 +39,39 @@ def selection_sort( arr ):
     
 
 
-# TO-DO:  implement the Bubble Sort function below
-# def bubble_sort( arr ):
 
-#     return arr
+
+# 1. Loop through your array
+#     - Compare each element to its neighbor
+#     - If elements in wrong position (relative to each other, swap them)
+# 2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+
+# TO-DO:  implement the Bubble Sort function below
+def bubble_sort( arr ):
+
+    swapped = True
+    
+    while swapped:
+      
+
+        swapped = False
+    # 1. Loop through your array
+        for i in range(0, len(arr) - 1):
+
+        #     - Compare each element to its neighbor
+            if arr[i] > arr[i +1]:
+
+            #     - If elements in wrong position (relative to each other, swap them)
+
+                arr [i], arr[i +1] = arr[i +1], arr[i]
+            
+           # 2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+                swapped = True
+
+                
+
+
+    return arr
 
 
 # STRETCH: implement the Count Sort function below
