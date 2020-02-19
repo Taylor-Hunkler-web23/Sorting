@@ -25,8 +25,18 @@ def merge( arrA, arrB ):
     # TO-DO
     for i in range(elements):
 
-        # if the element in the left array is smaller than the element in the right array, then put the left array element into the merged array. Increment index
-        if arrA[left_elem] < arrB[right_elem]:
+        #if at the end of arrA
+        if len(arrA) <= left_elem:
+            merged_arr[i] = arrB[right_elem]
+            right_elem +=1
+            
+            #if at the end of arrB
+        elif len(arrB) <= right_elem:
+            merged_arr[i] = arrA[left_elem]
+            left_elem +=1
+            
+ # if the element in the left array is smaller than the element in the right array, then put the left array element into the merged array. Increment index
+        elif arrA[left_elem] < arrB[right_elem]:
             merged_arr[i]= arrA[left_elem]
             left_elem += 1
 
@@ -34,7 +44,7 @@ def merge( arrA, arrB ):
         else:
             merged_arr[i]= arrB[right_elem]
             right_elem +=1
-    # print (merged_arr)
+    print (merged_arr)
     return merged_arr
 
 
@@ -43,7 +53,7 @@ def merge_sort( arr ):
      
     
 # 1. While your data set contains more than one item, split it in half
-    if len(arr )> 1:
+    if len(arr)> 1:
         left_arr = arr[:len(arr) // 2] 
         right_arr = arr[len(arr) // 2:]
 
